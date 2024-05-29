@@ -57,9 +57,13 @@ class Reader {
         return data;
     }
     public void showData(HashSet<ArrayList<String>> data) {
+        System.out.println(this.ExcelFileName+"檔案資料，以下內容清單");
         for (ArrayList<String> list : data) {
             System.out.println(list);
         }
+    }
+    public void showDataRecord(HashSet<ArrayList<String>> data) {
+        System.out.println(this.ExcelFileName+"檔案，總共有" + data.size()+"筆資料");
     }
     private String getValueFromCell(Cell cell) {
         switch (cell.getCellType()) {
@@ -78,11 +82,10 @@ class Reader {
 public class ExcelReader {
     public static void main(String[] args) {
 
-        String excelFileName = "Test1";
-        int worksheetIndex = 0;
-        int[] rows = {0, 1};  // 假設要讀取的行號
-        Reader reader1 = new Reader(excelFileName, worksheetIndex, rows);
+        Reader reader1 = new Reader("Test1", 0, new int[] {0, 1});
         HashSet<ArrayList<String>> result1 = reader1.ArrayListStore();
         reader1.showData(result1);
+        reader1.showDataRecord(result1);
+
     }
 }
