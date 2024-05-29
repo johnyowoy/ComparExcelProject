@@ -1,8 +1,11 @@
 # File
 .DS_Store
 ComparExcelProject.iml
+*.xls
+*.xlsx
+*.numbers
 # Data
 .idea
 Inputdata
 Outputdata
-Lib%
+out
